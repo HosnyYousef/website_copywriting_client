@@ -316,6 +316,72 @@ h2 em { font-style: italic; color: var(--accent); }
   margin: 0 0 16px;
 }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Social post mockup (ICD sample) */
+.post-mock-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, oklch(92% 0.02 75), oklch(88% 0.025 70));
+}
+.post-mock {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-input);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px -14px oklch(30% 0.03 60 / 0.3);
+  padding: 16px;
+}
+.post-mock-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.post-mock-avatar {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-mock-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+.post-mock-meta {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+.post-mock-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.post-mock-body img {
+  flex: none;
+  width: 38%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.post-mock-body p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-body);
+  margin: 0;
+}
+.post-mock-tag { color: var(--accent-dark); font-weight: 500; }
 .chip {
   font-size: 12.5px;
   padding: 6px 14px;
