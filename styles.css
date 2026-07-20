@@ -196,6 +196,45 @@ h2 em { font-style: italic; color: var(--accent); }
   padding: 96px 56px;
 }
 
+/* ---------- Clients / logo wall ---------- */
+.clients-inner { max-width: 1280px; margin: 0 auto; }
+.clients h2 { font-size: 32px; margin-bottom: 44px; }
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 136px;
+  padding: 26px 22px;
+  background: var(--bg);
+}
+.logo img {
+  max-width: 100%;
+  max-height: 72px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.58;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* Touch devices never hover — show the logos as they really are */
+@media (hover: none) {
+  .logo img { filter: grayscale(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo img { transition: none; }
+}
+
 /* ---------- Services ---------- */
 .services-grid {
   display: grid;
@@ -695,6 +734,7 @@ h2 em { font-style: italic; color: var(--accent); }
   .section,
   .section-band { padding: 64px 32px; }
   .plan-notes { grid-template-columns: repeat(2, 1fr); }
+  .logo-wall { grid-template-columns: repeat(3, 1fr); }
   .nav { padding: 16px 24px; }
   .quote-band { padding: 24px 32px; }
   .footer { padding: 28px 24px; }
@@ -714,6 +754,9 @@ h2 em { font-style: italic; color: var(--accent); }
     grid-template-columns: 1fr;
   }
   .service-card { padding: 28px; }
+  .clients h2 { font-size: 28px; }
+  .logo-wall { grid-template-columns: repeat(2, 1fr); }
+  .logo { min-height: 112px; padding: 22px 18px; }
   .hero-actions { flex-wrap: wrap; }
   .portfolio-head {
     flex-direction: column;
