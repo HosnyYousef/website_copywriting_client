@@ -317,6 +317,53 @@ h2 em { font-style: italic; color: var(--accent); }
 }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 
+/* Portfolio cards (title / client / role / tags / CTA) */
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  padding: 32px;
+  border-radius: 4px;
+  border: 1px solid oklch(87% 0.02 70);
+}
+.portfolio-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.portfolio-card-client {
+  display: block;
+  font-size: 13px;
+  color: oklch(50% 0.02 60);
+  margin-bottom: 16px;
+}
+.portfolio-card-role {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-body);
+  margin: 0 0 16px;
+}
+.portfolio-card .chips { margin-bottom: 24px; }
+.portfolio-card-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-size: 13.5px;
+}
+.portfolio-card-cta-disabled {
+  border: 1px solid var(--line-mid);
+  color: var(--ink-faint);
+  background: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 /* Social post mockup (ICD sample) */
 .post-mock-frame {
   display: flex;
@@ -513,7 +560,8 @@ h2 em { font-style: italic; color: var(--accent); }
   .contact h2 { font-size: 30px; }
   .services-grid,
   .testimonials-grid,
-  .portfolio-body {
+  .portfolio-body,
+  .portfolio-cards {
     grid-template-columns: 1fr;
   }
   .service-card { padding: 28px; }
