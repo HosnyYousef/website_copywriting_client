@@ -901,12 +901,16 @@ h2 em { font-style: italic; color: var(--accent); }
 :root[data-theme="dark"] .testimonial-card p {
   color: var(--ink-body);
 }
-:root[data-theme="dark"] .logo img {
-  filter: grayscale(1) brightness(1.35);
-  opacity: 0.72;
+:root[data-theme="dark"] .logo-wall {
+  background: oklch(46% 0.02 65);
+  border-color: oklch(46% 0.02 65);
 }
+:root[data-theme="dark"] .logo {
+  background: #fff;
+}
+:root[data-theme="dark"] .logo img,
 :root[data-theme="dark"] .logo:hover img {
-  filter: grayscale(0) brightness(1.1);
+  filter: none;
   opacity: 1;
 }
 
