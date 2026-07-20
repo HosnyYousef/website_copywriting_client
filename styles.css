@@ -667,46 +667,41 @@ h2 em { font-style: italic; color: var(--accent); }
   text-align: center;
   margin: 0 0 40px;
 }
-.contact-success {
-  padding: 32px;
-  text-align: center;
-  background: var(--bg-band);
-  border-radius: 4px;
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
   border: 1px solid var(--line);
 }
-.contact-success p {
-  font-family: 'Lora', serif;
-  font-size: 19px;
-  margin: 0;
-}
-.contact-form {
+.contact-method {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 24px;
+  background: var(--bg);
+  text-align: center;
+  transition: background 0.2s ease;
 }
-.contact-form input,
-.contact-form textarea {
-  padding: 14px 16px;
-  border: 1px solid oklch(78% 0.02 65);
-  border-radius: 2px;
-  background: var(--bg-input);
-  font-size: 14.5px;
-  font-family: 'Work Sans', sans-serif;
+.contact-method:hover { background: var(--bg-band); }
+.contact-method-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+}
+.contact-method-value {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  line-height: 1.4;
   color: var(--ink);
+  word-break: break-word;
 }
-.contact-form textarea { resize: vertical; }
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid var(--accent-soft);
-  border-color: var(--accent);
-}
-.contact-form button {
-  padding: 16px;
-  border: none;
-  font-size: 14.5px;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  font-family: 'Work Sans', sans-serif;
+.contact-method:hover .contact-method-value { color: var(--accent-dark); }
+@media (prefers-reduced-motion: reduce) {
+  .contact-method { transition: none; }
 }
 
 /* ---------- Footer ---------- */
@@ -754,6 +749,7 @@ h2 em { font-style: italic; color: var(--accent); }
     grid-template-columns: 1fr;
   }
   .service-card { padding: 28px; }
+  .contact-methods { grid-template-columns: 1fr; }
   .clients h2 { font-size: 28px; }
   .logo-wall { grid-template-columns: repeat(2, 1fr); }
   .logo { min-height: 112px; padding: 22px 18px; }

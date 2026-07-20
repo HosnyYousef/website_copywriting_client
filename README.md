@@ -7,7 +7,7 @@ Static one-page portfolio site implemented from the Claude Design project
 
 - `index.html` — page structure and content
 - `styles.css` — all styling (design palette, responsive breakpoints)
-- `script.js` — contact form handling
+- `assets/` — portrait, client logos, ICD post image
 
 ## Preview locally
 
@@ -34,14 +34,17 @@ styled placeholders. To replace one, swap the placeholder `div` in
 Slots: hero portrait (4:5), process photo (4:5), and four portfolio
 samples (16:11). Put images in an `assets/` folder.
 
-## Contact form
+## Contact
 
-There is no backend. Currently the form opens the visitor's email client
-addressed to hadeelbahaa172@gmail.com with the message pre-filled, then
-shows the thank-you state. For real in-page submissions, sign up for a
-form service (e.g. [Formspree](https://formspree.io)) and set the form's
-`action` to the endpoint they give you, removing the mailto fallback in
-`script.js`.
+The contact section lists Hadeel's email and phone as direct `mailto:` and
+`tel:` links — no form, no backend, nothing to break.
+
+The site previously had a form with no backend: it opened the visitor's
+email client and then claimed "your message has been sent", which was not
+true if the visitor had no mail client configured. It was replaced with
+direct contact details. If a real form is wanted later, sign up for a form
+service (e.g. [Formspree](https://formspree.io)) and point a form's
+`action` at the endpoint they provide.
 
 ## Deploying
 
