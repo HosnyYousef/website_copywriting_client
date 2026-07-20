@@ -1,13 +1,13 @@
-# Hadeel Bahaa — Content Services Website
+# Hadeel Bahaa: Content Services Website
 
 Static one-page portfolio site implemented from the Claude Design project
 "Hadeel Bahaa Content Services" (`Hadeel Bahaa.dc.html`).
 
 ## Files
 
-- `index.html` — page structure and content
-- `styles.css` — all styling (design palette, responsive breakpoints)
-- `assets/` — portrait, client logos, ICD post image
+- `index.html`: page structure and content
+- `styles.css`: all styling (design palette, responsive breakpoints)
+- `assets/`: portrait, client logos, ICD post image
 
 ## Preview locally
 
@@ -37,7 +37,7 @@ samples (16:11). Put images in an `assets/` folder.
 ## Contact
 
 The contact section lists Hadeel's email and phone as direct `mailto:` and
-`tel:` links — no form, no backend, nothing to break.
+`tel:` links; no form, no backend, nothing to break.
 
 The site previously had a form with no backend: it opened the visitor's
 email client and then claimed "your message has been sent", which was not
@@ -48,5 +48,5 @@ service (e.g. [Formspree](https://formspree.io)) and point a form's
 
 ## Deploying
 
-Any static host works: GitHub Pages, Netlify, Vercel, Cloudflare Pages —
+Any static host works: GitHub Pages, Netlify, Vercel, Cloudflare Pages.
 just upload/point at this folder.

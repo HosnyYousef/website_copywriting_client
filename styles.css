@@ -329,7 +329,7 @@ h2 em { font-style: italic; color: var(--accent); }
   filter: grayscale(0);
   opacity: 1;
 }
-/* Touch devices never hover — show the logos as they really are */
+/* Touch devices never hover, so show the logos as they really are */
 @media (hover: none) {
   .logo img { filter: grayscale(0); opacity: 1; }
 }
