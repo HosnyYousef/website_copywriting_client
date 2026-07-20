@@ -395,47 +395,121 @@ h2 em { font-style: italic; color: var(--accent); }
 .lang-pair-ar { direction: rtl; text-align: right; }
 .lang-pair-ar p { font-family: 'Work Sans', sans-serif; }
 
-/* Content calendar sample (platform variants) */
-.calendar-sample { margin-top: 24px; }
-.calendar-sample-label {
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent-dark);
-  font-weight: 600;
-  margin-bottom: 10px;
+/* ---------- Methodology / weekly content plan ---------- */
+.methodology h2 { margin-bottom: 12px; }
+.methodology-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 680px;
+  margin: 0 0 40px;
 }
-.calendar-table {
+.plan {
+  border: 1px solid var(--line-mid);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -28px oklch(30% 0.03 60 / 0.45);
+}
+.plan-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: var(--bg-band);
+  border-bottom: 1px solid var(--line);
+}
+.plan-tab {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 5px 14px;
+  border-radius: 3px;
+}
+.plan-file {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+.plan-grid {
   display: flex;
   flex-direction: column;
   gap: 1px;
   background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  overflow: hidden;
 }
-.calendar-row {
+.plan-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 44px 1fr 1fr;
   gap: 1px;
   background: var(--line);
 }
-.calendar-row-head span {
-  display: block;
+.plan-row-head span {
   background: var(--accent);
   color: var(--on-accent);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  padding: 10px 16px;
+  padding: 11px 16px;
 }
-.calendar-row p {
+.plan-num {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px 0;
+  background: var(--bg-band);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+.plan-cell {
   background: var(--bg-input);
-  margin: 0;
-  padding: 14px 16px;
+  padding: 16px 18px;
+}
+.plan-cell p {
+  margin: 0 0 8px;
   font-size: 12.5px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--ink-body);
+}
+.plan-cell p:last-of-type { margin-bottom: 0; }
+.plan-cell[dir="rtl"] { text-align: right; }
+.plan-tag { color: var(--accent-dark); font-weight: 500; }
+.plan-source {
+  display: block;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line-mid);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+.plan-cell-label { display: none; }
+
+.plan-notes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 40px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.plan-note {
+  background: var(--bg);
+  padding: 28px 24px;
+}
+.plan-note-num {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  color: var(--accent-dark);
+  margin-bottom: 12px;
+}
+.plan-note h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.plan-note p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0;
 }
 
 /* Social post mockup (ICD sample) */
@@ -620,6 +694,7 @@ h2 em { font-style: italic; color: var(--accent); }
   .process-photo { max-width: 480px; }
   .section,
   .section-band { padding: 64px 32px; }
+  .plan-notes { grid-template-columns: repeat(2, 1fr); }
   .nav { padding: 16px 24px; }
   .quote-band { padding: 24px 32px; }
   .footer { padding: 28px 24px; }
@@ -635,7 +710,7 @@ h2 em { font-style: italic; color: var(--accent); }
   .services-grid,
   .testimonials-grid,
   .portfolio-body,
-  .calendar-row {
+  .plan-notes {
     grid-template-columns: 1fr;
   }
   .service-card { padding: 28px; }
@@ -644,6 +719,25 @@ h2 em { font-style: italic; color: var(--accent); }
     flex-direction: column;
     gap: 4px;
   }
+  /* Plan stacks: row number becomes a label strip, cells get platform captions */
+  .plan-row { grid-template-columns: 1fr; }
+  .plan-row-head { display: none; }
+  .plan-num {
+    justify-content: flex-start;
+    padding: 8px 16px;
+    font-weight: 600;
+  }
+  .plan-num::before { content: 'Row '; }
+  .plan-cell-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-dark);
+  }
+  .plan-cell[dir="rtl"] .plan-cell-label { text-align: right; }
   .footer {
     flex-direction: column;
     gap: 12px;
