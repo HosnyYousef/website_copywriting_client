@@ -14,6 +14,7 @@
   --on-accent: oklch(98% 0.01 80);
   --nav-bg: oklch(97% 0.015 80 / 0.92);
   --workflow-bg: oklch(33% 0.09 210);
+  --quote-bg: oklch(45% 0.09 210);
   color-scheme: light;
 }
 
@@ -33,6 +34,7 @@
   --on-accent: oklch(98% 0.01 80);
   --nav-bg: oklch(16% 0.025 60 / 0.94);
   --workflow-bg: oklch(12% 0.035 210);
+  --quote-bg: oklch(25% 0.065 205);
   color-scheme: dark;
 }
 
@@ -335,18 +337,43 @@ h2 em { font-style: italic; color: var(--accent); }
 
 /* ---------- Quote band ---------- */
 .quote-band {
-  padding: 28px 56px;
-  background: var(--accent);
+  padding: 46px 56px;
+  background: var(--quote-bg);
   color: oklch(97% 0.01 80);
 }
-.quote-band p {
-  max-width: 900px;
+.quote-grid {
+  max-width: 1280px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.quote-grid blockquote {
+  min-width: 0;
+  margin: 0;
+  padding: 4px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid oklch(97% 0.01 80 / 0.24);
+}
+.quote-grid blockquote:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.quote-grid blockquote:last-child { padding-right: 0; }
+.quote-number {
+  margin-bottom: 12px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: oklch(88% 0.075 75);
+}
+.quote-grid p {
+  margin: 0;
   font-family: 'Lora', serif;
   font-style: italic;
-  font-size: 19px;
-  line-height: 1.6;
-  text-align: center;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.55;
 }
 
 /* ---------- Sections ---------- */
@@ -952,6 +979,21 @@ h2 em { font-style: italic; color: var(--accent); }
   .logo-wall { grid-template-columns: repeat(2, 1fr); }
   .logo { min-height: 112px; padding: 22px 18px; }
   .hero-actions { flex-wrap: wrap; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .quote-grid blockquote,
+  .quote-grid blockquote:first-child,
+  .quote-grid blockquote:last-child {
+    padding: 22px 0;
+    border-left: 0;
+    border-top: 1px solid oklch(97% 0.01 80 / 0.24);
+  }
+  .quote-grid blockquote:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .quote-grid blockquote:last-child { padding-bottom: 0; }
+  .quote-number { margin-bottom: 8px; }
+  .quote-grid p { font-size: 17px; }
   .nav-actions { gap: 8px; }
   .theme-toggle {
     width: 38px;
